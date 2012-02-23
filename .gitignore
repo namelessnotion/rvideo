@@ -3,3 +3,4 @@ spec/spec.log
 pkg/*
 Gemfile.lock
 .rvmrc
+old-spec
