@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'rvideo'
-  s.version     = 'namelessnotion/rvideo-0.1.1'
+  s.version     = '0.9.7'
   s.summary     = 'Just a gemspec for bundler to install via git'
   s.description = 'Forked RVideo - https://github.com/namelessnotion/rvideo'
 
