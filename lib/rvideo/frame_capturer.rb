@@ -85,6 +85,7 @@ module RVideo
       when "%"
         # milliseconds / 1000 * percent / 100
         t = (@inspector.duration.to_i / 1000.0) * (m[1].to_f / 100.0)
+        t = t.round(3)
       else
         raise TranscoderError::ParameterError,
           "Invalid timecode for frame capture: #{timecode}. " <<
