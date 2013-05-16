@@ -10,6 +10,7 @@ include RVideo
 class Inspector
   public :video_match
   public :audio_match
+  public :rotation_match
 end
 
 def inspector(filename)

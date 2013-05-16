@@ -405,14 +405,12 @@ module RVideo # :nodoc:
     end
 
     def video_orientation
-      stdout=''
-      stderr=''
-      open4.spawn "qtrotate #{full_filename}", :stdout=> stdout, :timeout => 10, :stderr => stderr
-      @orientation ||= stdout.chomp.to_i
-    rescue Timeout::Error
-      0
-    rescue
-      0
+      match = rotation_match
+      if rotation_match.nil?
+        0
+      else
+        rotation_match[1].to_i
+      end
     end
 
     def rotated?
@@ -475,6 +473,10 @@ module RVideo # :nodoc:
 
     def bitrate_match
       /bitrate: ([0-9\.]+)\s*(.*)\s+/.match(@raw_metadata)
+    end
+
+    def rotation_match
+      /rotate\s*:\s*([0-9]+)/.match(self.raw_metadata)
     end
 
     ###
