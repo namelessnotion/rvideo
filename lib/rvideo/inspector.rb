@@ -374,22 +374,22 @@ module RVideo # :nodoc:
     # The width of the video in pixels.
     def width
       return nil unless video?
-      #if aspect_rotated?
-      #  video_match[5].to_i
-      #else
+      if aspect_rotated?
+        video_match[5].to_i
+      else
         video_match[4].to_i
-      #end
+      end
     end
 
 #rspeced
     # The height of the video in pixels.
     def height
       return nil unless video?
-      #if aspect_rotated?
-      #  video_match[4].to_i
-      #else
+      if aspect_rotated?
+        video_match[4].to_i
+      else
         video_match[5].to_i
-      #end
+      end
     end
 
 #rspeced
